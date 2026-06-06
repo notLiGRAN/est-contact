@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЕСТЬ КОНТАКТ — NV</title>
+    <title>Александр Добрый | Человек-Магнит | NV</title>
+    <meta name="description" content="Мастер ТРИЗ, носитель ЯСНЫ. Создатель «Человека-Магнита». Проводник к фундаментальным точкам опоры.">
+    <meta property="og:title" content="Александр Добрый — Человек-Магнит">
+    <meta property="og:description" content="Интенсив, который меняет настройки мозга. 10 дней тренировки интеллекта, гормонального фона и скорости мысли.">
+    <meta property="og:image" content="assets/sasha_magnit.jpg">
+    <meta property="og:type" content="website">
     <style>
         :root {
             --graphite: #1e1e1e;
@@ -11,21 +16,28 @@
             --steel: #b0b0b0;
             --gold: #d4af37;
         }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-color: var(--graphite);
             color: var(--steel);
-            font-family: 'Inter', system-ui, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        /* HEADER */
         .header {
             padding: 20px 0;
             border-bottom: 1px solid var(--wood);
+        }
+        .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -43,58 +55,95 @@
         .nav a:hover {
             color: var(--gold);
         }
+        /* HERO */
         .hero {
             padding: 80px 0;
             text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/sasha_stage.jpg');
+            background-size: cover;
+            background-position: center;
         }
         .hero h1 {
             font-size: 3rem;
             color: var(--gold);
             margin-bottom: 16px;
         }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* ABOUT */
+        .about {
+            padding: 80px 0;
+            background: #2a2a2a;
+        }
+        /* MAGNET (центральный блок) */
+        .magnet {
+            padding: 80px 0;
+        }
+        .magnet-grid {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .magnet-image {
+            flex: 1;
+        }
+        .magnet-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(212,175,55,0.2);
+        }
+        .magnet-content {
+            flex: 1;
+        }
+        .magnet h2 {
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+        .audio-player {
+            margin: 32px 0;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        audio {
+            width: 100%;
+            background: #1e1e1e;
+            border-radius: 16px;
+        }
         .btn {
+            display: inline-block;
             background: var(--wood);
             color: var(--graphite);
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            font-size: 1rem;
+            padding: 12px 32px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s;
         }
         .btn:hover {
             background: var(--gold);
+            box-shadow: 0 0 15px rgba(212,175,55,0.5);
         }
-        .about, .intensives, .contact {
-            padding: 60px 0;
-        }
-        .cards {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .card {
-            background: #2a2a2a;
-            padding: 24px;
-            border-radius: 8px;
-            flex: 1;
-        }
-        .card h3 {
-            color: var(--gold);
-        }
+        /* FOOTER */
         .footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 40px 0;
             border-top: 1px solid var(--wood);
         }
         @media (max-width: 768px) {
-            .cards {
-                flex-direction: column;
-            }
-            .header {
+            .header .container {
                 flex-direction: column;
                 gap: 16px;
             }
             .hero h1 {
                 font-size: 2rem;
+            }
+            .magnet-grid {
+                flex-direction: column;
             }
         }
     </style>
@@ -103,71 +152,57 @@
 
 <header class="header">
     <div class="container">
-        <div class="logo">ЕСТЬ КОНТАКТ</div>
+        <div class="logo">NV — ЕСТЬ КОНТАКТ</div>
         <nav class="nav">
             <a href="#">Главная</a>
-            <a href="#">О проекте</a>
-            <a href="#">Контакты</a>
+            <a href="#">О мастере</a>
+            <a href="#">Интенсив</a>
         </nav>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <h1>ЕСТЬ КОНТАКТ</h1>
-        <p>Пробуждение. Игра. Империя.</p>
-        <button class="btn" id="contactBtn">Погрузиться</button>
+        <h1>АЛЕКСАНДР ДОБРЫЙ. ЧЕЛОВЕК-ЛЕГЕНДА.</h1>
+        <p>Мастер ТРИЗ, носитель ЯСНЫ, создатель «Человека-Магнита». Твой проводник к фундаментальным точкам опоры.</p>
     </div>
 </section>
 
 <section class="about">
     <div class="container">
-        <h2>О проекте</h2>
-        <p>Здесь будет текст от Астрона — о книге, пробуждении, игре «ОКО» и суверенитете.</p>
+        <h2>КОРНИ, ДАЮЩИЕ СИЛУ</h2>
+        <p>От берегов Ледовитого океана до коучинга крупнейших брендов. Саня Добрый — человек-энциклопедия, который переводит сложные системы мироздания на язык ЯСНЫ. Его метод — не просто обучение, а распаковка твоего истинного потенциала через ТРИЗ и гуманную педагогику.</p>
     </div>
 </section>
 
-<section class="intensives">
+<section class="magnet">
     <div class="container">
-        <h2>Ступени / Инициации</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Ступень 1</h3>
-                <p>Описание первой ступени.</p>
+        <div class="magnet-grid">
+            <div class="magnet-image">
+                <img src="assets/sasha_miniature.jpg" alt="Человек-Магнит — мир в твоих руках">
             </div>
-            <div class="card">
-                <h3>Ступень 2</h3>
-                <p>Описание второй ступени.</p>
-            </div>
-            <div class="card">
-                <h3>Ступень 3</h3>
-                <p>Описание третьей ступени.</p>
+            <div class="magnet-content">
+                <h2>ЧЕЛОВЕК-МАГНИТ</h2>
+                <p>Интенсив, который меняет настройки мозга. 10 дней тренировки интеллекта, гормонального фона и скорости мысли. Мы не выравниваем баланс — мы выращиваем новые лучи твоей жизни.</p>
+                <div class="audio-player">
+                    <audio controls src="assets/sasha_voice.mp3"></audio>
+                    <p style="margin-top: 12px;">🎙️ Голос Мастера — слушай, погружайся</p>
+                </div>
+                <a href="#" class="btn">СЛУШАТЬ ГОЛОС МАСТЕРА</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="contact">
-    <div class="container">
-        <h2>Связь</h2>
-        <p>Telegram: <a href="#">@nvgate</a></p>
-    </div>
-</section>
-
 <footer class="footer">
     <div class="container">
-        <p>© NV — ЕСТЬ КОНТАКТ</p>
+        <p>© NV — ЕСТЬ КОНТАКТ. САША ДОБРЫЙ. Человек-Магнит.</p>
     </div>
 </footer>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.getElementById('contactBtn');
-        if (btn) {
-            btn.addEventListener('click', function() {
-                alert('Скоро здесь будет портал.');
-            });
-        }
+        console.log('NV Portal active — САША ДОБРЫЙ | Человек-Магнит');
     });
 </script>
 
